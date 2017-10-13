@@ -1,0 +1,18 @@
+app:
+  name: event-manager
+spring:
+  profiles:
+    active: local
+logging:
+  pattern:
+    console: datetime:%d [%level] %logger  message:%msg%n
+    file: datetime:%d [%level] %logger  message:%msg%n
+  level:
+    org.springframework.web: DEBUG
+    com.astrazeneca.als: INFO
+security:
+  basic:
+    enabled: false
+  ignored:
+  - api/*
+  - health
