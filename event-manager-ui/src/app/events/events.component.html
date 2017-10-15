@@ -1,20 +1,29 @@
 <div fxLayout="row" fxLayout.xs="column" fxLayout.sm="column">
-
   <mat-card fxFlex>
     <mat-card-content>
+
       <div fxLayout="row" fxLayout.xs="column" fxLayout.sm="column">
-          <span fxFlex>
+        <span fxFlex>
               Event Name: Diwali
             </span>
-        <button mat-raised-button color="accent" 
-        (click)=" callShowMethod ? showEventDetails() : hideEventDetails()"><mat-icon>{{showIcon}}</mat-icon></button>
       </div>
 
       <div fxLayout="row" fxLayout.xs="column" fxLayout.sm="column">
-          <div *ngIf="showEvents">
-              <event-item-details></event-item-details>
-            </div>
-      </div>     
+        <span fxFlex matLine>
+                Event date: 12/12/2017
+              </span>
+      </div>
+
+      <div fxLayout="row" fxLayout.xs="column" fxLayout.sm="column">
+          <span fxFlex></span>
+        <button mat-raised-button color="accent" (click)=" callShowMethod ? showEventDetails() : hideEventDetails()"><mat-icon>{{showIcon}}</mat-icon></button>
+      </div>
+
+      <div fxLayout="row" fxLayout.xs="column" fxLayout.sm="column">
+        <div *ngIf="showEvents">
+          <event-item-details></event-item-details>
+        </div>
+      </div>
     </mat-card-content>
   </mat-card>
 </div>
