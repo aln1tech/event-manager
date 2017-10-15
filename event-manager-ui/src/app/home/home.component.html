@@ -3,53 +3,6 @@
     <button mat-raised-button color="warn">Create Event</button>
 </div>
 
-<div fxLayout="column" fxLayout.xs="column" fxLayout.sm="column" fxLayoutGap="20px" class="home-create-div">
-    
-    <mat-expansion-panel>
-        <mat-expansion-panel-header>
-            <mat-panel-title>
-                Personal data
-            </mat-panel-title>
-            <!-- <mat-panel-description>
-                Item 1
-            </mat-panel-description> -->
-        </mat-expansion-panel-header>
-
-        <div fxLayout="column" fxLayout.xs="column" fxLayout.sm="column" fxLayoutGap="5px">
-            <mat-grid-list cols="3">
-                <mat-grid-tile>
-                    <mat-card>
-                        <mat-card-content>
-                            1
-                            <button mat-raised-button color="warn" (click)="openEventItem()">Block</button>
-                        </mat-card-content>
-
-                    </mat-card>
-                </mat-grid-tile>
-
-                <mat-grid-tile>
-                    <mat-card>
-                        <mat-card-content>
-                            2
-                        </mat-card-content>
-                    </mat-card>
-                </mat-grid-tile>
-                <mat-grid-tile>
-                    <mat-card>
-                        <mat-card-content>
-                            4
-                        </mat-card-content>
-                    </mat-card>
-                </mat-grid-tile>
-
-            </mat-grid-list>
-            <div fxLayout="row" fxLayout.xs="column" fxLayout.sm="column">
-            <span fxFlex></span>
-            <mat-paginator [length]="100"
-            [pageSize]="10"
-            [pageSizeOptions]="[5, 10, 25, 100]">
-            </mat-paginator>
-            </div>
-        </div>
-    </mat-expansion-panel>
+<div fxLayout="column" fxLayout.xs="column" fxLayout.sm="column" fxLayoutGap="20px" class="home-create-div">  
+    <events></events>
 </div>

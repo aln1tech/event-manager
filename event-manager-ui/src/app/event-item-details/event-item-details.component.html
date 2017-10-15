@@ -1,3 +1,12 @@
-<p>
-  event-item-details works!
-</p>
+<div fxLayout="row" fxLayout.xs="column" fxLayout.sm="column">
+  <mat-list>
+    <mat-list-item *ngFor="let detail of eventDetails">
+      <h3 matLine> {{detail.institute}} </h3>
+      <p matLine>
+        <span> {{detail.itemName}} </span>
+      </p>
+      <mat-icon matLine>{{detail.icon}}</mat-icon>
+      <button mat-raised-button color="primary" (click)="blockItem()">Block</button>
+    </mat-list-item>
+  </mat-list>
+</div>
