@@ -1,0 +1,12 @@
+.make-x-scrollable {
+  overflow-x: scroll;
+  width: 80%;
+  height: 100%;
+}
+
+.make-y-scrollable {
+  overflow-y: scroll;
+  height: 200px;
+  width:100%;
+}
+

@@ -11,7 +11,7 @@ export class EventItemDialogComponent implements OnInit {
   constructor(private _dialogRef : MatDialogRef<EventItemDialogComponent>) { }
 
   ngOnInit() {
-    
+
   }
 
 }

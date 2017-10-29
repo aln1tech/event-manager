@@ -1,9 +1,11 @@
 package com.az.als.eventmanager;
 
 import com.az.als.eventmanager.controller.CorsAdapter;
+import com.az.als.eventmanager.services.StorageService;
 import com.google.common.base.Predicate;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -16,12 +18,17 @@ import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
+import javax.annotation.Resource;
+
 import static springfox.documentation.builders.PathSelectors.regex;
 
 @SpringBootApplication
 @EnableSwagger2
 @EnableJpaRepositories
-public class SpringBootApp {
+public class SpringBootApp implements CommandLineRunner {
+
+    @Resource
+    StorageService storageService;
 
     private static final Logger LOGGER = LoggerFactory.getLogger(SpringBootApp.class);
 
@@ -54,5 +61,11 @@ public class SpringBootApp {
 
     private Predicate<String> apiPaths() {
         return regex("/api*");
+    }
+
+    @Override
+    public void run(String... arg) throws Exception {
+        storageService.deleteAll();
+        storageService.init();
     }
 }

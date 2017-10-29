@@ -1,5 +1,5 @@
 <div fxLayout="row" fxLayout.xs="column" fxLayout.sm="column">
-  <mat-list>
+  <mat-list fxLayout="row" fxLayout.lt-sm="column" ngClass.lt-sm="make-y-scrollable" class="make-x-scrollable">
     <mat-list-item *ngFor="let detail of eventDetails">
       <h3 matLine> {{detail.institute}} </h3>
       <p matLine>

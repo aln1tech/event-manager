@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { MatDialog } from "@angular/material";
-
-import { EventItemDialogComponent } from "../event-item-dialog/event-item-dialog.component";
+import {Component, OnInit} from "@angular/core";
+import {MatDialog, MatDialogConfig} from "@angular/material";
+import {NewEventDialogComponent} from "../new-event-dialog/new-event-dialog.component";
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -9,14 +8,17 @@ import { EventItemDialogComponent } from "../event-item-dialog/event-item-dialog
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private _dialog : MatDialog) { }
+  constructor(private _dialog: MatDialog) {
+  }
 
   ngOnInit() {
   }
 
 
-  openEventItem(){
-    this._dialog.open(EventItemDialogComponent);
+  openNewEvent() {
+    const config = new MatDialogConfig();
+    config.disableClose = true;
+    this._dialog.open(NewEventDialogComponent, config);
   }
-  
+
 }

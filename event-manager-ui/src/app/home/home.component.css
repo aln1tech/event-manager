@@ -1,3 +1,8 @@
 .home-create-div {
     padding: 20px;
 }
+
+.make-scrollable {
+  height: 600px; //Or any other height you wish
+overflow-y: scroll;
+}

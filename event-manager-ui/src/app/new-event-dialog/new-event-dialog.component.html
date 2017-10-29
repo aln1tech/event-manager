@@ -1,0 +1,37 @@
+<div fxLayout="row" fxLayout.xs="column" fxLayout.sm="column">
+
+  <mat-card>
+    <mat-card-title>
+      <span>New Event</span>
+    </mat-card-title>
+    <mat-card-content>
+      <mat-form-field class="new-event-form-field-full-width">
+        <input matInput placeholder="Event Name" [(ngModel)]="eventName" name="eventName"
+               [formControl]="eventNameController" required>
+        <mat-error *ngIf="eventNameController.hasError('required')">
+          Event Name is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput [matDatepicker]="picker" [(ngModel)]="eventLastDate" name="eventLastDate"
+               placeholder="Choose a event last date"
+               [formControl]="eventLastDateController" required>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+        <mat-error *ngIf="eventLastDateController.hasError('required')">
+          Event Last Date is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+
+      <input type="file" accept=".csv" (change)="selectFile($event)">
+
+      <button [disabled]="!selectedFiles" (click)="upload()" mat-raised-button color="accent">
+        SUBMIT
+      </button>
+      <button mat-raised-button mat-dialog-close color="warn">
+        Cancel
+      </button>
+    </mat-card-content>
+  </mat-card>
+</div>

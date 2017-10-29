@@ -1,6 +1,5 @@
 package com.az.als.eventmanager.entity;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -15,13 +14,14 @@ import java.util.Date;
 @Entity
 @Data
 @NoArgsConstructor
-public class EventContributorDetail {
+public class WishItem {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private String contributorName;
     @OneToOne(cascade = CascadeType.ALL)
-    private WishItem item;
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
+    private Event eventId;
+    private String schoolName;
+    private String itemName;
+    private Integer quanity;
     private Date createdOn;
 }
